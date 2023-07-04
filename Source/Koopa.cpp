@@ -19,21 +19,21 @@ Koopa::Koopa(const bool i_underground, const float i_x, const float i_y) :
 	underground(i_underground),
 	state(0),
 	get_out_timer(KOOPA_GET_OUT_DURATION),
-	get_out_animation(CELL_SIZE, "Resources/Images/KoopaGetOut.png", KOOPA_GET_OUT_ANIMATION_SPEED),
-	walk_animation(CELL_SIZE, "Resources/Images/KoopaWalk.png", KOOPA_WALK_ANIMATION_SPEED)
+	get_out_animation(CELL_SIZE, "../Source/Resources/Images/KoopaGetOut.png", KOOPA_GET_OUT_ANIMATION_SPEED),
+	walk_animation(CELL_SIZE, "../Source/Resources/Images/KoopaWalk.png", KOOPA_WALK_ANIMATION_SPEED)
 {
 	horizontal_speed = -KOOPA_SPEED;
 
 	if (0 == underground)
 	{
-		texture.loadFromFile("Resources/Images/KoopaShell.png");
+		texture.loadFromFile("../Source/Resources/Images/KoopaShell.png");
 	}
 	else
 	{
-		texture.loadFromFile("Resources/Images/UndergroundKoopaShell.png");
+		texture.loadFromFile("../Source/Resources/Images/UndergroundKoopaShell.png");
 
-		get_out_animation.set_texture_location("Resources/Images/UndergroundKoopaGetOut.png");
-		walk_animation.set_texture_location("Resources/Images/UndergroundKoopaWalk.png");
+		get_out_animation.set_texture_location("../Source/Resources/Images/UndergroundKoopaGetOut.png");
+		walk_animation.set_texture_location("../Source/Resources/Images/UndergroundKoopaWalk.png");
 	}
 }
 
@@ -69,11 +69,11 @@ void Koopa::die(const unsigned char i_death_type)
 
 			if (0 == underground)
 			{
-				texture.loadFromFile("Resources/Images/KoopaDeath.png");
+				texture.loadFromFile("../Source/Resources/Images/KoopaDeath.png");
 			}
 			else
 			{
-				texture.loadFromFile("Resources/Images/UndergroundKoopaDeath.png");
+				texture.loadFromFile("../Source/Resources/Images/UndergroundKoopaDeath.png");
 			}
 		}
 	}
